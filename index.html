@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Prowler</title>
+    <script src='js/canvas_util.js'></script>
+    <script type="text/javascript">
+    // <![CDATA[
+      onload = function() {
+        ws = new WebSocket("ws://balloon:8080/")
+        ws.onopen = function() { console.log('open') }
+        ws.onclose = function() { console.log('close') }
+
+        var stage = new Stage(document.getElementById('canvas'), ws)
+        var tile = new Tile
+        stage.add(tile)
+        var hunter = new Hunter
+        hunter.x = stage.width / 2
+        hunter.y = stage.height / 2
+        stage.add(hunter)
+        stage.run()
+      }
+    // ]]>
+    </script>
+  </head>
+  <body>
+    <canvas id="canvas" width="256" height="256"></canvas>
+  </body>
+</html>
