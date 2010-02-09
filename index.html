@@ -1,11 +1,16 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
     <title>Prowler</title>
     <script src='js/prowler.js'></script>
     <script type="text/javascript">
     // <![CDATA[
       onload = function() {
-        ws = new WebSocket("ws://192.168.1.11:8080/")
+        ws = new WebSocket("ws://localhost:8080/")
         ws.onopen = function() { console.log('open') }
         ws.onclose = function() { console.log('close') }
 
